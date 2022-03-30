@@ -5,13 +5,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Document(collection = "facturas")
 public class Facturas {
 
     @Id
-    private String ConsecutivoFactura = UUID.randomUUID().toString();
+    private String consecutivoFactura = UUID.randomUUID().toString().substring(0,8);
 
     private LocalDate fecha;
 
@@ -19,14 +20,14 @@ public class Facturas {
 
     private String nombreVendedor;
 
-    private String productosComprados;
+    private List productosComprados;
 
     public String getConsecutivoFactura() {
-        return ConsecutivoFactura;
+        return consecutivoFactura;
     }
 
     public void setConsecutivoFactura(String consecutivoFactura) {
-        ConsecutivoFactura = consecutivoFactura;
+        this.consecutivoFactura = consecutivoFactura;
     }
 
     public LocalDate getFecha() {
@@ -53,11 +54,11 @@ public class Facturas {
         this.nombreVendedor = nombreVendedor;
     }
 
-    public String getProductosComprados() {
+    public List getProductosComprados() {
         return productosComprados;
     }
 
-    public void setProductosComprados(String productosComprados) {
+    public void setProductosComprados(List productosComprados) {
         this.productosComprados = productosComprados;
     }
 
