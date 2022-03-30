@@ -1,8 +1,9 @@
 package com.example.demo.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Id;
+
 import java.time.LocalDate;
 import java.util.UUID;
 
