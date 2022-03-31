@@ -22,7 +22,7 @@ public class VolanteController {
         return this.dto.saveVol(volantes);
     }
 
-    @GetMapping(value = "/volantes")//para historial de ventas
+    @GetMapping(value = "/volantes")
     private Flux<Volantes> findAll() {
         return this.dto.findAll();
     }
