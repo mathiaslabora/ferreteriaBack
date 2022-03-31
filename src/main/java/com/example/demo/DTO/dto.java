@@ -10,4 +10,8 @@ public interface dto {
 
     Flux<Facturas> findAll();
 
+    Mono<Facturas> findById(String id);
+
+    Mono<Facturas> updateFact(String id, Facturas facturas);
+
 }

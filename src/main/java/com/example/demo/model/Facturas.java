@@ -22,6 +22,8 @@ public class Facturas {
 
     private List productosComprados;
 
+    private double costoTotal;
+
     public String getConsecutivoFactura() {
         return consecutivoFactura;
     }
@@ -62,8 +64,13 @@ public class Facturas {
         this.productosComprados = productosComprados;
     }
 
+    public double getCostoTotal() {
+        return costoTotal;
+    }
 
-
+    public void setCostoTotal(double costoTotal) {
+        this.costoTotal = costoTotal;
+    }
     //el precio individual estaria en productos comprados y
     //total a pagar lo calculamos en el front
 }

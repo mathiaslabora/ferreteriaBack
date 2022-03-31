@@ -5,6 +5,7 @@ import com.example.demo.model.Facturas;
 import com.example.demo.repository.FacturasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -23,5 +24,18 @@ public class FacturaService implements dto {
         return this.facturasRepository.findAll();
     }
 
+    @Override
+    public Mono<Facturas> findById(String id) {
+        return this.facturasRepository.findById(id);
+    }
 
+    @Override
+    public Mono<Facturas> updateFact(String id, Facturas facturas){
+        return this.facturasRepository.findById(id)
+                .flatMap(fact -> {
+                    facturas.setConsecutivoFactura(id);
+                    return saveFact(facturas);
+                })
+                .switchIfEmpty(Mono.empty());
+    }
 }

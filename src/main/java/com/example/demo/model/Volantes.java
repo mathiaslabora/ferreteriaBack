@@ -5,16 +5,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.UUID;
 
 @Document(collection = "volantes")
 public class Volantes {
     @Id
-    private String idProveedor = UUID.randomUUID().toString();
+    private String idProveedor = UUID.randomUUID().toString().substring(0,4);
 
     private String nombre;
 
-    private String prodAIngresar;
+    private List prodAIngresar;
 
     private LocalDate fecha;
 
@@ -34,11 +35,11 @@ public class Volantes {
         this.nombre = nombre;
     }
 
-    public String getProdAIngresar() {
+    public List getProdAIngresar() {
         return prodAIngresar;
     }
 
-    public void setProdAIngresar(String prodAIngresar) {
+    public void setProdAIngresar(List prodAIngresar) {
         this.prodAIngresar = prodAIngresar;
     }
 
