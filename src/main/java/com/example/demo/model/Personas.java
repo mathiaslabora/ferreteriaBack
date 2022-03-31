@@ -8,7 +8,7 @@ import java.util.UUID;
 @Document(collection = "proveedores")
 public class Personas {
     @Id
-    private String id = UUID.randomUUID().toString();
+    private String id = UUID.randomUUID().toString().substring(0,8);
 
     private String nombre;
 
