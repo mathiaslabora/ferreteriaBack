@@ -82,5 +82,5 @@ public class Facturas {
         this.descripcion = descripcion;
     }
     //el precio individual estaria en productos comprados y
-    //total a pagar lo calculamos en el front
+    //total a pagar lo calculamos en el front efectivamente
 }
