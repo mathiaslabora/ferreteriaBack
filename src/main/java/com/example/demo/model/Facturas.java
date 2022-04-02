@@ -24,6 +24,8 @@ public class Facturas {
 
     private double costoTotal;
 
+    private String descripcion;
+
     public String getConsecutivoFactura() {
         return consecutivoFactura;
     }
@@ -70,6 +72,14 @@ public class Facturas {
 
     public void setCostoTotal(double costoTotal) {
         this.costoTotal = costoTotal;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     //el precio individual estaria en productos comprados y
     //total a pagar lo calculamos en el front

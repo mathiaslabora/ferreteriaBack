@@ -19,6 +19,8 @@ public class Volantes {
 
     private LocalDate fecha;
 
+    private String RUT;
+
     public String getIdProveedor() {
         return idProveedor;
     }
@@ -49,5 +51,13 @@ public class Volantes {
 
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
+    }
+
+    public String getRUT() {
+        return RUT;
+    }
+
+    public void setRUT(String RUT) {
+        this.RUT = RUT;
     }
 }
