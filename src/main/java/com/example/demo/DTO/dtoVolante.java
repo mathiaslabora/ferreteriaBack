@@ -7,11 +7,8 @@ import reactor.core.publisher.Mono;
 
 public interface dtoVolante {
     Mono<Volantes> saveVol(Volantes volantes);
-
     Flux<Volantes> findAll();
-
     Mono<Volantes> findById(String id);
-
     Mono<Volantes> updateVol(String id, Volantes volantes);
 
 }
