@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
 @CrossOrigin(origins = "*")
 @RestController
 public class InventarioController {
@@ -39,18 +40,16 @@ public class InventarioController {
     }
 
     @GetMapping(value = "/nombrearticulo/{articulo}")
-    private Flux<Inventario> consultaPorArticulo(@PathVariable("articulo") String articulo){
+    private Flux<Inventario> consultaPorArticulo(@PathVariable("articulo") String articulo) {
         return this.dto.consultaPorArticulo(articulo);
     }
 
     @DeleteMapping("/articulos/{id}")
-    private Mono<ResponseEntity<Inventario>>deleteInv(@PathVariable("id") String id){
+    private Mono<ResponseEntity<Inventario>> deleteInv(@PathVariable("id") String id) {
         return this.dto.deleteArt(id)
                 .flatMap(inventario1 -> Mono.just(ResponseEntity.ok(inventario1)))
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
-
-
 
 
 }

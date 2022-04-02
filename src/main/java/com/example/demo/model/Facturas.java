@@ -12,7 +12,7 @@ import java.util.UUID;
 public class Facturas {
 
     @Id
-    private String consecutivoFactura = UUID.randomUUID().toString().substring(0,8);
+    private String consecutivoFactura = UUID.randomUUID().toString().substring(0, 8);
 
     private LocalDate fecha;
 
